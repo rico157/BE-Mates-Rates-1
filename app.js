@@ -4,11 +4,14 @@ const mongoose = require('mongoose');
 const schema = require('./schema/schema');
 const password = require('./data');
 
-
-mongoose.connect(`mongodb+srv://MCompton96:${password}@cluster0.9nchj.mongodb.net/mates_rates_app?retryWrites=true&w=majority`);
+mongoose
+  .connect(
+    `mongodb+srv://rico:Newyork757544@cluster0.9nchj.mongodb.net/mates_rates_app?retryWrites=true&w=majority`
+  )
+  .catch(console.log);
 mongoose.connection.once('open', () => {
-    console.log('connected to the database');
-})
+  console.log('connected to the database');
+});
 
 const app = express();
 

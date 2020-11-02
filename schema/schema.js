@@ -33,59 +33,45 @@ const CityType = new GraphQLObjectType({
 const UserType = new GraphQLObjectType({
   name: 'User',
   fields: () => ({
-    id: { type: GraphQLID},
+    id: { type: GraphQLID },
     name: { type: GraphQLString },
-    username: { type: GraphQLString},
-    avatarURL: { type: GraphQLString},
+    username: { type: GraphQLString },
+    avatarURL: { type: GraphQLString },
     reviews: {
       type: new GraphQLList(ReviewType),
       resolve(parent, args) {
-        return Review.find({ user_id: parent.id})
+        return Review.find({ user_id: parent.id });
       }
     },
     friends: {
-      type: FriendType,
+      type: new GraphQLList(UserType),
       resolve(parent, args) {
-          return Friend.findById(parent.friend_id)
+        return User.findById(parent.id);
       }
     }
   })
 });
 
-const FriendType = new GraphQLObjectType({
-  name: 'Friends',
-  fields: () => ({
-    id: { type: GraphQLID},
-    name: { type: GraphQLInt },
-    users: {
-      type: new GraphQLList(UserType),
-        resolve(parent, args) {
-         return User.find({ friend_id: parent.id })
-        }    
-    }
-  })
-})
-
 const ReviewType = new GraphQLObjectType({
   name: 'Review',
   fields: () => ({
-      id: { type: GraphQLID},
-      body:{ type: GraphQLString},
-      rating: { type: GraphQLInt },
-      restaurant_id: {
-        type: RestaurantType,
-        resolve(parent, args) {
-          return Restaurant.findById(parent.restaurant_id)
-        }
-      },
-      user_id: {
-        type: UserType,
-        resolve(parent, args) {
-          return User.findById(parent.user_id)
-        }
+    id: { type: GraphQLID },
+    body: { type: GraphQLString },
+    rating: { type: GraphQLInt },
+    restaurant_id: {
+      type: RestaurantType,
+      resolve(parent, args) {
+        return Restaurant.findById(parent.restaurant_id);
       }
+    },
+    user_id: {
+      type: UserType,
+      resolve(parent, args) {
+        return User.findById(parent.user_id);
+      }
+    }
   })
-})
+});
 
 const RestaurantType = new GraphQLObjectType({
   name: 'Restaurant',
@@ -105,7 +91,7 @@ const RestaurantType = new GraphQLObjectType({
     reviews: {
       type: new GraphQLList(ReviewType),
       resolve(parent, args) {
-        return Review.find({restaurant_id: parent.id })
+        return Review.find({ restaurant_id: parent.id });
       }
     }
   })
@@ -121,6 +107,12 @@ const RootQuery = new GraphQLObjectType({
         return City.findById(args.id);
       }
     },
+    cities: {
+      type: new GraphQLList(CityType),
+      resolve(parent, args) {
+        return City.find({});
+      }
+    },
     restaurant: {
       type: RestaurantType,
       args: { id: { type: GraphQLID } },
@@ -128,14 +120,8 @@ const RootQuery = new GraphQLObjectType({
         return Restaurant.findById(args.id);
       }
     },
-    cities: {
-      type: new GraphQLList(CityType),
-      resolve(parent, args) {
-        return City.find({});
-      }
-    },
     restaurants: {
-      type: new GraphQLList(CityType),
+      type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
         return Restaurant.find({});
       }
@@ -143,33 +129,20 @@ const RootQuery = new GraphQLObjectType({
     reviews: {
       type: new GraphQLList(ReviewType),
       resolve(parent, args) {
-        return Review.find({})
+        return Review.find({});
       }
     },
     users: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
-        return User.find({})
+        return User.find({});
       }
     },
     user: {
       type: UserType,
-      args: { id: { type: GraphQLID}},
+      args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return User.findById(args.id)
-      }
-    },
-    friends: {
-      type: new GraphQLList(FriendType),
-      resolve(parent, args) {
-        return Friend.find({})
-      }
-    },
-    friend: {
-      type: FriendType,
-      args: { id: { type: GraphQLID}},
-      resolve(parent, args) {
-        return Friend.findById(args.id)
+        return User.findById(args.id);
       }
     }
   }
@@ -217,31 +190,20 @@ const Mutation = new GraphQLObjectType({
     addUser: {
       type: UserType,
       args: {
-        name: { type: GraphQLString},
-        avatarURL: { type: GraphQLString},
-        friend_id: { type: GraphQLString }
+        name: { type: GraphQLString },
+        avatarURL: { type: GraphQLString }
+        // friends: { type: GraphQLString }
       },
       resolve(parent, args) {
         let user = new User({
           name: args.name,
-          avatarURL: args.avatarURL,
-          friend_id: args.friend_id
+          avatarURL: args.avatarURL
+          // friends: args.friend_id
         });
         return user.save();
       }
     },
-    addFriend: {
-      type: FriendType,
-      args: {
-        name: { type: GraphQLInt }
-      },
-      resolve(parent, args) {
-        let friend = new Friend({
-          name: args.name
-        });
-        return friend.save();
-      }
-    },
+
     addReview: {
       type: ReviewType,
       args: {
