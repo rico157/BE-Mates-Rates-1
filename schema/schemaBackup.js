@@ -203,6 +203,22 @@ const Mutation = new GraphQLObjectType({
         return user.save();
       }
     },
+    updateUser: {
+      type: UserType,
+      args: {
+        user_id: { type: GraphQLID },
+        friend_id: { type: GraphQLString }
+      },
+      resolve(parent, { user_id, friend_id }) {
+        return User.findByIdAndUpdate(
+          user_id,
+          {
+            $push: { friends: friend_id }
+          },
+          { new: true }
+        );
+      }
+    },
 
     addReview: {
       type: ReviewType,
