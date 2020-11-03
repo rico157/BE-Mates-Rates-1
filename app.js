@@ -1,11 +1,14 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const mongoose = require('mongoose');
-const schema = require('./schema/schemaBackup');
+const schema = require('./schema/schema');
+// const bodyParser = require('body-parser');
+
 const { rootResolver } = require('./resolvers/index');
+
 mongoose
   .connect(
-    `mongodb+srv://rico:Newyork757544@cluster0.9nchj.mongodb.net/mates_rates_app?retryWrites=true&w=majority`
+    `mongodb+srv://rico:Newyork757544@cluster0.9nchj.mongodb.net/mates_rates_app?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .catch(console.log);
 mongoose.connection.once('open', () => {
@@ -14,11 +17,13 @@ mongoose.connection.once('open', () => {
 
 const app = express();
 
+
+// app.use(bodyParser.json())
 app.use(
   '/graphql',
   graphqlHTTP({
     schema,
-    // rootValue: rootResolver,
+    rootValue: rootResolver,
     graphiql: true
   })
 );
