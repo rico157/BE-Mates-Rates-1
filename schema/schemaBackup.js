@@ -24,6 +24,7 @@ const CityType = new GraphQLObjectType({
     restaurants: {
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
+        
         return Restaurant.find({ city_id: parent.id });
       }
     }
@@ -46,7 +47,8 @@ const UserType = new GraphQLObjectType({
     friends: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
-        return User.findById(parent.id);
+        
+        return User.find({ //find users });
       }
     }
   })
@@ -80,7 +82,6 @@ const RestaurantType = new GraphQLObjectType({
       type: GraphQLID
     },
     name: { type: GraphQLString },
-
     cuisine: { type: GraphQLString },
     city: {
       type: CityType,
