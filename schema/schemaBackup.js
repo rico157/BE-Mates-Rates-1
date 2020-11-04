@@ -215,7 +215,7 @@ const Mutation = new GraphQLObjectType({
         return User.findByIdAndUpdate(
           user_id,
           {
-            $push: { friend_ids: friend_id }
+            $push: { friends: friend_id }
           },
           { new: true }
         );
