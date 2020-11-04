@@ -48,7 +48,7 @@ const UserType = new GraphQLObjectType({
       type: new GraphQLList(UserType),
       resolve(parent, args) {
         
-        return User.find({ //find users });
+        return User.find({ })
       }
     }
   })
@@ -214,7 +214,7 @@ const Mutation = new GraphQLObjectType({
         return User.findByIdAndUpdate(
           user_id,
           {
-            $push: { friends: friend_id }
+            $push: { friends: User.findById(friend_id) }
           },
           { new: true }
         );
