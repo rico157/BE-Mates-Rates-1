@@ -1,0 +1,30 @@
+{
+  "name": "BE-Mates-Rates",
+  "version": "1.0.0",
+  "description": "The backend of our app that list reviews of restaurants your friends have been to. In here will be the database and the server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenSymons/BE-Mates-Rates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenSymons/BE-Mates-Rates/issues"
+  },
+  "homepage": "https://github.com/BenSymons/BE-Mates-Rates#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
