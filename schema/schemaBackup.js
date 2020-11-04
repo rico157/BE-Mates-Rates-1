@@ -24,7 +24,6 @@ const CityType = new GraphQLObjectType({
     restaurants: {
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
-        
         return Restaurant.find({ city_id: parent.id });
       }
     }
@@ -47,10 +46,12 @@ const UserType = new GraphQLObjectType({
     friends: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
-        
-        return User.find({ //find users });
+        console.log(parent);
+        return User.find().where('_id').in(parent.friends);
       }
-    }
+    },
+
+    friend_ids: { type: GraphQLList(GraphQLID) }
   })
 });
 
@@ -214,7 +215,7 @@ const Mutation = new GraphQLObjectType({
         return User.findByIdAndUpdate(
           user_id,
           {
-            $push: { friends: friend_id }
+            $push: { friend_ids: friend_id }
           },
           { new: true }
         );
