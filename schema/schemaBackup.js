@@ -14,6 +14,8 @@ const {
   GraphQLInt
 } = graphql;
 
+// Creat City Schema
+
 const CityType = new GraphQLObjectType({
   name: 'City',
   fields: () => ({
@@ -30,6 +32,8 @@ const CityType = new GraphQLObjectType({
     }
   })
 });
+
+//  Create User Schema
 
 const UserType = new GraphQLObjectType({
   name: 'User',
@@ -54,6 +58,8 @@ const UserType = new GraphQLObjectType({
   })
 });
 
+// Create Review Schema
+
 const ReviewType = new GraphQLObjectType({
   name: 'Review',
   fields: () => ({
@@ -74,6 +80,8 @@ const ReviewType = new GraphQLObjectType({
     }
   })
 });
+
+// Create Restaurant Schema
 
 const RestaurantType = new GraphQLObjectType({
   name: 'Restaurant',
@@ -98,9 +106,12 @@ const RestaurantType = new GraphQLObjectType({
   })
 });
 
+// Create Query Schemas
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
+    // GET single City
     city: {
       type: CityType,
       args: { id: { type: GraphQLID } },
@@ -108,12 +119,14 @@ const RootQuery = new GraphQLObjectType({
         return City.findById(args.id);
       }
     },
+    // Get all cities
     cities: {
       type: new GraphQLList(CityType),
       resolve(parent, args) {
         return City.find({});
       }
     },
+    // GET single restaurant
     restaurant: {
       type: RestaurantType,
       args: { id: { type: GraphQLID } },
@@ -121,24 +134,28 @@ const RootQuery = new GraphQLObjectType({
         return Restaurant.findById(args.id);
       }
     },
+    // GET all restaurants
     restaurants: {
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
         return Restaurant.find({});
       }
     },
+    // GET all reviews
     reviews: {
       type: new GraphQLList(ReviewType),
       resolve(parent, args) {
         return Review.find({});
       }
     },
+    // GET all users
     users: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
         return User.find({});
       }
     },
+    // GET Single User
     user: {
       type: UserType,
       args: { id: { type: GraphQLID } },
@@ -149,9 +166,12 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
+// Create Mutation Schemas
+
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
+    // City POST Request
     addCity: {
       type: CityType,
       args: {
@@ -166,6 +186,7 @@ const Mutation = new GraphQLObjectType({
         return city.save();
       }
     },
+    // Restaurant POST request
     addRestaurant: {
       type: RestaurantType,
       args: {
@@ -188,39 +209,45 @@ const Mutation = new GraphQLObjectType({
         return restaurant.save();
       }
     },
+    // User POST request
     addUser: {
       type: UserType,
       args: {
         name: { type: GraphQLString },
-        avatarURL: { type: GraphQLString }
+        avatarURL: { type: GraphQLString },
+        username: { type: GraphQLString}
         // friends: { type: GraphQLString }
       },
       resolve(parent, args) {
         let user = new User({
           name: args.name,
-          avatarURL: args.avatarURL
+          avatarURL: args.avatarURL,
+          username: args.username
           // friends: args.friend_id
         });
         return user.save();
       }
     },
-    updateUser: {
+    // PATCH Add friend to user
+    addFriend: {
       type: UserType,
       args: {
         user_id: { type: GraphQLID },
-        friend_id: { type: GraphQLString }
+        friend_id: { type: GraphQLID }
       },
       resolve(parent, { user_id, friend_id }) {
-        return User.findByIdAndUpdate(
-          user_id,
-          {
-            $push: { friends: User.findById(friend_id) }
-          },
-          { new: true }
-        );
-      }
+        return User.findById(friend_id).then((res) => {
+          return User.findByIdAndUpdate(
+            user_id,
+            {
+              $push: { friends: res }
+            },
+            { new: true }
+          )
+        })
+        }
     },
-
+    // Review POST request
     addReview: {
       type: ReviewType,
       args: {
@@ -238,7 +265,37 @@ const Mutation = new GraphQLObjectType({
         });
         return review.save();
       }
+    },
+    // PATCH User
+    updateUser: {
+      type: UserType,
+      args: {
+        user_id: { type: GraphQLID},
+        username: {type: GraphQLString},
+        avatarURL: {type: GraphQLString},
+        name: {type: GraphQLString}
+      },
+      resolve(parent, {user_id, username, avatarURL, name}) {
+        const userToUpdate = User.findById(user_id)
+        if (username) {
+          userToUpdate.update({username: username})
+        } else if (avatarURL) {
+          userToUpdate.update(avatarURL)
+        } else if (name) {
+          userToUpdate.update(name)
+        }
+        return userToUpdate;
+        // const userToUpdate = User.findById(user_id);
+        // Object.keys(input).forEach(value => {
+        //   userToUpdate[value] = input[value]
+        // });
+        // const updatedUser = userToUpdate.save();
+        // return updatedUser;
+      }
     }
+    // PATCH Review
+    // DELETE User
+    // DELETE Review
   }
 });
 
