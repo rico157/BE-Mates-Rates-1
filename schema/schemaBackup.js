@@ -51,8 +51,14 @@ const UserType = new GraphQLObjectType({
     friends: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
-        console.log(parent);
         return User.find().where("_id").in(parent.friends);
+      },
+    },
+    wishlist: {
+      type: new GraphQLList(RestaurantType),
+      resolve(parent, args) {
+        console.log(parent);
+        return Restaurant.find({ user_id: parent.id });
       },
     },
   }),
@@ -344,6 +350,25 @@ const Mutation = new GraphQLObjectType({
       resolve(parent, { review_id }) {
         const deletedReview = Review.findByIdAndRemove(review_id);
         return deletedReview;
+      },
+    },
+
+    // POST Wishlist
+
+    addWishlist: {
+      type: UserType,
+      args: {
+        restaurant_id: { type: GraphQLID },
+        user_id: { type: GraphQLID },
+      },
+      resolve(parent, { user_id, restaurant_id }) {
+        return User.findByIdAndUpdate(
+          user_id,
+          {
+            $push: { wishlist: restaurant_id },
+          },
+          { new: true }
+        );
       },
     },
   },
