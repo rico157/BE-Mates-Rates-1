@@ -4,6 +4,7 @@ const Restaurant = require("../models/restaurants");
 const Review = require("../models/reviews");
 const User = require("../models/users");
 const Friend = require("../models/friends");
+const { findById } = require("../models/cities");
 
 const {
   GraphQLObjectType,
@@ -57,7 +58,6 @@ const UserType = new GraphQLObjectType({
     wishlist: {
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
-        console.log(parent);
         return Restaurant.find().where("_id").in(parent.wishlist);
       },
     },
@@ -374,13 +374,29 @@ const Mutation = new GraphQLObjectType({
     },
 
   // DELETE friend
-
-    // currently adding delete friend mutation
+    deleteFriend:{
+      type: UserType,
+      args: {
+        user_id: {type: GraphQLID},
+        friend_id: {type: GraphQLString}
+      },
+      resolve(parent, {user_id, friend_id}) {
+        // const currentUser = User.findById(user_id)
+        // console.log(User.findById(user_id));
+        return User.findByIdAndUpdate(
+          user_id,
+          {
+            $pull: {friends: friend_id}
+          }
+        )
+      }
+    }
   },
 });
 
 // Yard and coop = "5f9fe47cdcfa8ddc70c271f5"
 // Sam = "5fa28b052c117a5240501f6e"
+// friend to remove = "5fa28b4a2c117a5240501f6f"
 
 // addFriend: {
 //   type: UserType,
