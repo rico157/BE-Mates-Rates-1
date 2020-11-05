@@ -3,8 +3,6 @@ const City = require("../models/cities");
 const Restaurant = require("../models/restaurants");
 const Review = require("../models/reviews");
 const User = require("../models/users");
-const Friend = require("../models/friends");
-const { findById } = require("../models/cities");
 
 const {
   GraphQLObjectType,
@@ -381,8 +379,6 @@ const Mutation = new GraphQLObjectType({
         friend_id: {type: GraphQLString}
       },
       resolve(parent, {user_id, friend_id}) {
-        // const currentUser = User.findById(user_id)
-        // console.log(User.findById(user_id));
         return User.findByIdAndUpdate(
           user_id,
           {
@@ -390,30 +386,32 @@ const Mutation = new GraphQLObjectType({
           }
         )
       }
-    }
+    },
+    // DELETE from wishlist
+    deleteWish: {
+      type: UserType,
+      args: {
+        user_id: {type: GraphQLID},
+        restaurant_id: {type: GraphQLString}
+      },
+      resolve(parent, {user_id, restaurant_id}) {
+        return User.findByIdAndUpdate(
+          user_id,
+          {
+            $pull: {wishlist: restaurant_id}
+          }
+        )
+      }
+    },
   },
 });
 
 // Yard and coop = "5f9fe47cdcfa8ddc70c271f5"
 // Sam = "5fa28b052c117a5240501f6e"
 // friend to remove = "5fa28b4a2c117a5240501f6f"
+// Restaurant to remove = "5f9fe47cdcfa8ddc70c271f5"
 
-// addFriend: {
-//   type: UserType,
-//   args: {
-//     user_id: { type: GraphQLID },
-//     friend_id: { type: GraphQLString },
-//   },
-//   resolve(parent, { user_id, friend_id }) {
-//     return User.findByIdAndUpdate(
-//       user_id,
-//       {
-//         $push: { friends: friend_id },
-//       },
-//       { new: true }
-//     );
-//   },
-// },
+
 module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation,
