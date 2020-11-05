@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   name: String,
   avatarURL: String,
-  friends: [String]
+  friends: [String],
+  wishlist: [String]
 });
 
 module.exports = mongoose.model('User', userSchema);
