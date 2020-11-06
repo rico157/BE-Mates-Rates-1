@@ -92,7 +92,10 @@ const RestaurantType = new GraphQLObjectType({
   name: "Restaurant",
   fields: () => ({
     id: {
-      type: GraphQLID,
+      type: GraphQLID
+    },
+    logo: {
+      type: GraphQLString
     },
     name: { type: GraphQLString },
     cuisine: { type: GraphQLString },

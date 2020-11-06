@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const restaurantsSchema = new Schema({
   name: String,
   cuisine: String,
-  city_id: String
+  city_id: String,
+  logo: String
 });
 
 module.exports = mongoose.model('Restaurant', restaurantsSchema);

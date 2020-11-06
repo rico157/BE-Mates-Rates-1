@@ -1,5 +1,6 @@
 
-const {filterRestaurant} = require("./utils")
+const { it, expect } = require("@jest/globals")
+const {filterRestaurant, filterReviews} = require("./utils")
 
 describe("filterRestaurant tests", () => {
     it("does not mutate original restaurant data", () => {
@@ -31,7 +32,7 @@ describe("filterRestaurant tests", () => {
             }
         ])
     })
-    it("returns what we want it to return", () => {
+    it("will replace the city name with the city ID", () => {
         const restaurantInput = [{
             restaurant_name: "turtle_bay",
             city_name: "Manchester",
@@ -59,5 +60,31 @@ describe("filterRestaurant tests", () => {
             cuisine: "Italian"  
             }
         ])
+    })
+    it("filter reviews tests", () => {
+        const restaurantInput = [{
+            _id: 354,
+            name: "pizza express",
+            city_name: "Manchester",
+            cuisine: "Carribean"
+            },
+        ]
+        const reviewInput = [{
+            user_name: "Ben",
+            body: "not bad",
+            rating: 3,
+            restaurant_name: "pizza express"
+        }]
+        const userInput = [{
+            name: "Ben",
+            _id: 3789,
+        }]
+        const output = filterReviews(reviewInput, restaurantInput, userInput)
+        expect(output).toEqual([{
+            user_id: 3789,
+            body: "not bad",
+            rating: 3,
+            restaurant_id: 354
+        }])
     })
 })

@@ -12,3 +12,18 @@ exports.filterRestaurant = (restaurantData, cityData) => {
     })
     return thirdRestaurant
 }
+
+exports.filterReviews = (reviewData, restaurantData, userData) => {
+    const copyReview = [...reviewData]
+    const cleanedData = copyReview.map(review => {
+        const restaurant = restaurantData.filter(restaurant => restaurant["name"] === review["restaurant_name"])
+        const user = userData.filter(user => user["name"] === review["user_name"])
+        const newReview = {...review}
+        newReview["restaurant_id"] = restaurant[0]["_id"]
+        delete newReview["restaurant_name"]
+        newReview["user_id"] = user[0]["_id"]
+        delete newReview["user_name"]
+        return newReview
+    })
+    return cleanedData
+}
