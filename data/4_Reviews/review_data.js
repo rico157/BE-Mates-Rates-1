@@ -134,7 +134,7 @@ module.exports = [
       "I stumbled on this undiscovered gem right in our neighboorhood. I was happy to see how clean everything was. This was one of the best mouth-watering burgers Ive had grace my taste buds in a long time. The appetizers must be sprinkled with crack because I just craved for more and more. Easily earned their 5 stars!",
     rating: 5,
     user_name: "CK",
-    restaurant_name: "Northern Sould Grilled Cheese",
+    restaurant_name: "Northern Soul Grilled Cheese",
   },
   {
     body:

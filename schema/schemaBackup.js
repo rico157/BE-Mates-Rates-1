@@ -56,7 +56,8 @@ const UserType = new GraphQLObjectType({
     wishlist: {
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
-        return Restaurant.find().where("_id").in(parent.wishlist);
+        console.log(parent);
+        return Restaurant.find({ user_id: parent.id });
       },
     },
   }),
@@ -92,10 +93,7 @@ const RestaurantType = new GraphQLObjectType({
   name: "Restaurant",
   fields: () => ({
     id: {
-      type: GraphQLID
-    },
-    logo: {
-      type: GraphQLString
+      type: GraphQLID,
     },
     name: { type: GraphQLString },
     cuisine: { type: GraphQLString },
@@ -359,11 +357,10 @@ const Mutation = new GraphQLObjectType({
     addWishlist: {
       type: UserType,
       args: {
-        restaurant_id: { type: GraphQLString },
+        restaurant_id: { type: GraphQLID },
         user_id: { type: GraphQLID },
       },
       resolve(parent, { user_id, restaurant_id }) {
-        console.log(restaurant_id);
         return User.findByIdAndUpdate(
           user_id,
           {
@@ -373,47 +370,8 @@ const Mutation = new GraphQLObjectType({
         );
       },
     },
-
-  // DELETE friend
-    deleteFriend:{
-      type: UserType,
-      args: {
-        user_id: {type: GraphQLID},
-        friend_id: {type: GraphQLString}
-      },
-      resolve(parent, {user_id, friend_id}) {
-        return User.findByIdAndUpdate(
-          user_id,
-          {
-            $pull: {friends: friend_id}
-          }
-        )
-      }
-    },
-    // DELETE from wishlist
-    deleteWish: {
-      type: UserType,
-      args: {
-        user_id: {type: GraphQLID},
-        restaurant_id: {type: GraphQLString}
-      },
-      resolve(parent, {user_id, restaurant_id}) {
-        return User.findByIdAndUpdate(
-          user_id,
-          {
-            $pull: {wishlist: restaurant_id}
-          }
-        )
-      }
-    },
   },
 });
-
-// Yard and coop = "5f9fe47cdcfa8ddc70c271f5"
-// Sam = "5fa28b052c117a5240501f6e"
-// friend to remove = "5fa28b4a2c117a5240501f6f"
-// Restaurant to remove = "5f9fe47cdcfa8ddc70c271f5"
-
 
 module.exports = new GraphQLSchema({
   query: RootQuery,

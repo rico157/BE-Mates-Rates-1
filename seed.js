@@ -4,7 +4,7 @@ const Restaurant = require("./models/restaurants");
 const Review = require("./models/reviews");
 const User = require("./models/users");
 const { sample } = require("lodash");
-const { filterRestaurant, filterReviews } = require("./utils");
+const { filterRestaurant, filterReviews, formatBelongsTo } = require("./utils");
 const {
   restaurantData,
   cityData,

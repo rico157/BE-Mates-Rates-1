@@ -68,6 +68,13 @@ module.exports = [
     logo: "https://www.mcdonalds.com/content/dam/uk/nfl/logo/logo-80.png",
   },
   {
+    name: "Turtle Bay",
+    cuisine: "Caribbean",
+    city_name: "Manchester",
+    logo:
+      "https://www.pointfranchise.co.uk/images/zoom/articles/turtle-bay-logo.jpg",
+  },
+  {
     name: "Crafthouse",
     cuisine: "British",
     city_name: "Leeds",
