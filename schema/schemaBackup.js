@@ -57,7 +57,7 @@ const UserType = new GraphQLObjectType({
       type: new GraphQLList(RestaurantType),
       resolve(parent, args) {
         console.log(parent);
-        return Restaurant.find({ user_id: parent.id });
+        return Restaurant.find().where('_id').in(parent.wishlist);
       }
     }
   })
