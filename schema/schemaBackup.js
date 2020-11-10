@@ -358,7 +358,7 @@ const Mutation = new GraphQLObjectType({
     addWishlist: {
       type: UserType,
       args: {
-        restaurant_id: { type: GraphQLID },
+        restaurant_id: { type: GraphQLString },
         user_id: { type: GraphQLID }
       },
       resolve(parent, { user_id, restaurant_id }) {
