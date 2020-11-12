@@ -7,6 +7,8 @@ const restaurantsSchema = new Schema({
   city_id: String,
   address: String,
   information: String,
+  phone: String,
+  website: String,  
   logo: String
 });
 
