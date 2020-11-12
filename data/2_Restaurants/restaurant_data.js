@@ -7,6 +7,7 @@ module.exports = [
     information: "Every Day: 5:00 PM - 11:00 PM",
     phone: "+44 161 238 9088",
     website: "https://www.facebook.com/penangmanchester/",
+    description: "Malaysian dishes and creative cocktails served in an easygoing setting with bold, floral wallpaper.",
     logo:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/83057900_524168508260493_3083143918406074368_n.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=U_qhl-IpijEAX-GL2Mu&_nc_ht=scontent-lht6-1.xx&oh=3fbe7b075b01b6f7f67d2a4f8215196e&oe=5FC94AD4",
   },
@@ -18,6 +19,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 12:00 AM",
     phone: "+44 161 401 0812",
     website: "https://www.heyshakedown.co.uk/",
+    description: "Get your burger fix from Shakedown - Beef & Chicken Burger options! Why not make it a meal and add fries and a drink. Don't just stop there, have a look at our tasty sides.  We have Nachos, Mozzarella Sticks and more with plenty of different sauces for you to choose from",
     logo:
       "https://www.heyshakedown.co.uk/uploads/images/templates/827/originals/1595847473Largehomelogo.png",
   },
@@ -29,6 +31,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 10:00 PM",
     phone: "+44 7960 105349",
     website: "https://www.rudyspizza.co.uk/",
+    description: "Traditional Neapolitan Pizza using authentic ingredients straight from Naples",
     logo:
       "https://wp3-fatsomasites.imgix.net/uploads/sites/550/2018/09/rudys-logo-header.png?auto=format%2Ccompress",
   },
@@ -40,6 +43,7 @@ module.exports = [
     information: "Every Day: 11:00 AM - 10:00 PM",
     phone: "+44 161 832 7026",
     website: "https://www.northernsoulmcr.com",
+    description: "BANGING OUT KILLER EATS AND RARE SOUL BEATS",
     logo: "https://www.northernsoulmcr.com/wp-content/uploads/2017/10/logo.png",
   },
   {
@@ -49,7 +53,8 @@ module.exports = [
     address: "184-186 Deansgate, Manchester M3 3WB England",
     information: "Every Day: 5:00 PM - 11:00 PM",
     phone: "+44 161 836 6980",
-    website: "https://thehawksmoor.com/locations/manchester/", 
+    website: "https://thehawksmoor.com/locations/manchester/",
+    description: "A place to blur day with night over cocktails and the country’s finest meat", 
     logo:
       "https://scontent-lhr8-1.xx.fbcdn.net/v/t31.0-8/14691888_1340089946031871_5531685693542462600_o.png?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=L2BaNOVI7SwAX_vxvpD&_nc_ht=scontent-lhr8-1.xx&oh=67b501764aa6d2c428c85e378725eb6b&oe=5FC9210E",
   },
@@ -61,6 +66,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 12:00 AM",
     phone: "+44 161 710 2570",
     website: "https://www.yardandcoop.com/",
+    description: "Spacious joint offering specialty fried chicken, sides & cocktails amid funky, barnyard-chic decor.",
     logo:
       "https://www.yardandcoop.com/wp-content/uploads/2019/12/YC-logo-2.png",
   },
@@ -72,6 +78,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 12:00 AM",
     phone: "+44 161 831 0288",
     website: "https://australasia.uk.com/",
+    description: "Modern Australian food including Indonesian and Japanese influences, served in a subterranean venue.",
     logo:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/52156730_2459524070746195_532283440251273216_o.png?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=tVfxFW1SxFEAX_xRSb5&_nc_ht=scontent-lht6-1.xx&oh=a3a89ca090e8788adf1b3e6cd1a6af08&oe=5FCC8133",
   },
@@ -83,6 +90,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 11:00 PM",
     phone: "+44 161 537 3737",
     website: "https://www.dishoom.com/manchester/",
+    description: "Dishoom Manchester near Spinningfields serves a lovingly curated menu of Bombay comfort food and first-class drinks all day, every day.",
     logo:
       "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/82858112_3313057045387420_8442048182120087552_n.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_ohc=r2rePOw5EG8AX-KX2FZ&_nc_ht=scontent-lhr8-1.xx&oh=c0e40a5d407bc27361e18705887e76cb&oe=5FC9FD46",
   },
@@ -94,6 +102,7 @@ module.exports = [
     information: "Every Day: 11:30 AM - 10:00 PM",
     phone: "+44 161 464 9779",
     website: "https://www.phocafe.co.uk/locations/manchester/",
+    description: "Pho restaurant Manchester Vietnamese street food based in the newly renovated Corn Exchange, Near to Manchester Arena, Selfridges and Harvey Nichols.",
     logo:
       "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/21462333_10154966697133602_1617967719453573179_n.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=krXxzbutGlIAX_zYLeN&_nc_ht=scontent-lhr8-1.xx&oh=99d64ac294182578db341cc41c775fa5&oe=5FCAEEE2",
   },
@@ -105,6 +114,7 @@ module.exports = [
     information: "Every Day: 6:00 AM - 12:00 AM",
     phone: "+44 161 831 9862",
     website: "www.mcdonalds.com/gb/en-gb/location/manchester/manchester-piccadilly-gardens/11-13-piccadilly/8261480.html",
+    description: "It's Maccies, really doesn't need a bloody description",
     logo: "https://www.mcdonalds.com/content/dam/uk/nfl/logo/logo-80.png",
   },
   {
@@ -115,6 +125,7 @@ module.exports = [
     information: "Every Day: 10:00 AM - 10:00 PM",
     phone: "+44 161 235 8411",
     website: "+44 161 235 8411",
+    description: "From vegan to the ultimate meat jerk pit feast, there is something for everyone at Turtle Bay!",
     logo:
       "https://www.pointfranchise.co.uk/images/zoom/articles/turtle-bay-logo.jpg",
   },
@@ -126,6 +137,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 2:30 PM & 5:00 PM - 8:00 PM",
     phone: "+44 113 897 0444",
     website: "https://www.crafthouse-restaurant.com/",
+    description: "Sleek, industrial-look modern restaurant serving a British menu, chargrilled dishes and fine wines.",
     logo:
       "https://www.crafthouse-restaurant.com/wp-content/themes/brandstyle1/images/groupsite-brands/crafthouse/logo.png",
   },
@@ -137,6 +149,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 10:00 PM",
     phone: "+44 113 426 5000",
     website: "https://www.issho-restaurant.com/",
+    description: "Airy, contemporary rooftop for Japanese izakaya dishes plus cocktails, sake, snacks & a terrace.",
     logo:
       "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/18199495_1286399914742113_7157475376886717149_n.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=o1eO_cT6pjMAX-Fadmw&_nc_ht=scontent-lhr8-1.xx&oh=823bc9640d17b31685487e3ce1f2f5fc&oe=5FCBDF9D",
   },
@@ -148,6 +161,7 @@ module.exports = [
     information: "Every Day: 4:00 PM - 9:00 PM",
     phone: "+44 113 243 2586",
     website: "https://zaapthai.co.uk/locations/leeds/",
+    description: "LEEDS IS WHERE IT ALL STARTED…. We opened our first Zaap Thai street food restaurant in our home city on 18th May 2015. There hasn’t been a quiet moment since, if you are looking for a buzzing Bangkok market atmosphere, with real Thai street food then head down to the Grand Arcade on New Briggate in Leeds City Centre.",
     logo: "https://zaapthai.co.uk/wp-content/themes/zaap2017/images/logo.svg",
   },
   {
@@ -158,6 +172,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 10:30 PM",
     phone: "+44 113 243 6854",
     website: "https://www.pizzafella.com/",
+    description: "Wood-fired pizzas with elevated ingredients, plus beer and wine, served in a cozy, industrial space.",
     logo:
       "https://static.wixstatic.com/media/32a0e8_5110de2bf2ed43fd913dfc464b63e106~mv2.png/v1/fill/w_81,h_53,al_c,q_85,usm_0.66_1.00_0.01/32a0e8_5110de2bf2ed43fd913dfc464b63e106~mv2.webp",
   },
@@ -169,6 +184,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 10:00 PM",
     phone: "+44 113 245 1080",
     website: "https://tattu.co.uk/Leeds/",
+    description: "Modern Chinese cuisine and cocktails in sophisticated, dark wood bar/restaurant with carved screens.",
     logo:
       "https://tse2.mm.bing.net/th?id=OIP.7CiMt3bnEqwt4AkvgiVQfQHaDt&pid=Api",
   },
@@ -180,6 +196,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 11:00 PM",
     phone: "+44 113 345 4434",
     website: "http://cultoitalian.co.uk/",
+    description: "Bright, relaxed eatery serving Italian fare such as pasta, pizza & salads plus beer & wine.",
     logo: "https://nuunlimited.com/wp-content/uploads/2020/05/CULTO.jpg",
   },
   {
@@ -190,6 +207,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 11:00 PM",
     phone: "+44 114 327 1514",
     website: "www.ginsengsheffield.co.uk",
+    description: "Traditional Korean cuisine and tabletop barbecues in a modern, glass-fronted restaurant.",
     logo: "https://www.westoneplazasheffield.com/images/work/ginseng.png",
   },
   {
@@ -200,6 +218,7 @@ module.exports = [
     information: "Every Day: 9:30 AM - 11:00 PM",
     phone: "+44 114 322 1020",
     website: "https://www.domorestaurant.co.uk/",
+    description: "DOMO (meaning ‘home’) is a family-run Sardinian restaurant, bar and deli situated in the iconic Eagle Works building in the heart of Sheffield’s Kelham Island district. You will find Domo in the centre of Citu’s ‘Little Kelham’ development, home to some of Sheffield’s finest Industrial heritage & paving the way in zero carbon technology. Owned by Raffaele (from Sardinia) & Sarah (Sheffield born & bred) ‘We pride ourselves on serving up food, drink & hospitality you would find in our small town of Castelsardo’",
     logo:
       "https://images.squarespace-cdn.com/content/v1/5b44c4cc5b409b06179809d5/1554982710600-1QWAYAOP4A00Z0LJL3PR/ke17ZwdGBToddI8pDm48kGZvg5Clf_SpqnZmLqlsI7gUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dl9ccUeI9GUEltHgIIvjXZmM0WcBoa1CFMnf3iyhu0KBCjLISwBs8eEdxAxTptZAUg/DOMO_RESTAURANT_BAR_DELI_WHITE.png?format=750w",
   },
@@ -211,6 +230,7 @@ module.exports = [
     information: "Every Day: 6:30 AM - 09:30 AM & 12:00 PM - 2:00 PM & 7:00 PM - 9:00 PM",
     phone: "+44 114 245 4444",
     website: "https://www.whitleyhall.com/restaurant1584",
+    description: "Our guests often tell us that the jewel in the crown of a stay at Whitley Hall is the quality of our cuisine. Whether a simple Bar Snack, A La Carte or Table D’Hôte the meals served are justifiably appreciated by those w",
     logo: "https://www.whitleyhall.com/wp-content/uploads/2016/07/logo.png",
   },
   {
@@ -221,6 +241,7 @@ module.exports = [
     information: "Every Day: 9:00 AM - 4:00 PM",
     phone: "+44 114 270 0101",
     website: "http://www.howst.co.uk/",
+    description: "Always concentrating on using the best ingredients and making everything fresh every day offering a friendly quality service to all our customers new and old.",
     logo:
       "https://static.wixstatic.com/media/9c608a_f60e5c92bd0b45c28540fdb0c562421f.png/v1/fill/w_126,h_81,al_c,q_85,usm_0.66_1.00_0.01/9c608a_f60e5c92bd0b45c28540fdb0c562421f.webp",
   },
@@ -232,6 +253,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 3:00 PM & 5:00 PM - 9:00 PM",
     phone: "+44 114 275 5123",
     website: "https://www.edosushi.co.uk/",
+    description: "Edo Sushi is brought to you by two good friends with a passion for Japanese food. We want to bring more diversity to food in Sheffield and give people the chance to try authentic Japanese food straight from the kitchen. ",
     logo:
       "https://www.edosushi.co.uk/wp-content/uploads/2019/09/edo-sushi-logo-final_blue-01-1.png",
   },
@@ -243,6 +265,7 @@ module.exports = [
     information: "Every Day: 6:00 PM - 11:00 PM",
     phone: "+44 116 258 2590",
     website: "https://www.feastindia.co.uk",
+    description: "Modern space with Bollywood posters, auto-rickshaw and 6 open kitchens, for Indian buffet dining.",
     logo: "http://feastindia.co.uk/wp-content/uploads/2019/04/logo-b.png",
   },
   {
@@ -253,6 +276,7 @@ module.exports = [
     information: "Every Day: 5:00 PM - 10:00 PM",
     phone: "+44 116 233 2715",
     website: "http://www.herbrestaurant.co.uk/",
+    description: "Kerala Indian fare with plant-based ingredients & ample herbs & spices amid cultural decor.",
     logo: "http://herbrestaurant.co.uk/images/logo.png",
   },
   {
@@ -263,6 +287,7 @@ module.exports = [
     information: "Every Day: 9:00 AM - 9:30 PM",
     phone: "+44 7460 834929",
     website: "https://www.facebook.com/reecegroby/",
+    description: "Reece’s is located in the heart of Groby at the Groby Ex-Servicemen club. My kitchen will be serving homemade, good quality food, catering for everyone.",
     logo:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/101202751_2641686882744360_3888887329393213440_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=SctFwkWpgsIAX-C9tOs&_nc_ht=scontent-lht6-1.xx&oh=33aee7f3f60fc1d2b08fe03f7d105f14&oe=5FCBD53B",
   },
@@ -274,6 +299,7 @@ module.exports = [
     information: "Every Day: 6:00 PM - 9:00 PM",
     phone: "+44 7904 929374",
     website: "https://www.facebook.com/LiluLeicester/",
+    description: "Unusual Indian-style preparations of classic dishes in a compact corner dining room.",
     logo:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/49029532_2170931872925058_1334825610249240576_n.png?_nc_cat=100&ccb=2&_nc_sid=09cbfe&_nc_ohc=vvzI4Suqek0AX_MVq-D&_nc_ht=scontent-lht6-1.xx&oh=7e3f9465e7f107fa4c7f46e2b2de461c&oe=5FCBF43E",
   },
@@ -285,6 +311,7 @@ module.exports = [
     information: "Every Day: 5:00 PM - 11:00 PM",
     phone: "+44 116 270 5110",
     website: "www.spicebazzarleicester.co.uk",
+    description: "Low-key, family-owned restaurant serving Indian classics such curries & veggie dishes.",
     logo:
       "https://www.spicebazzarleicester.co.uk/wp-content/uploads/2019/08/spice-bazaar-restaurant-logo-2.png",
   },
@@ -296,6 +323,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 11:00 PM",
     phone: "+44 116 251 8230",
     website: "http://www.bonzaisushi.co.uk/",
+    description: "Bonzai Sushi Bar serves dishes of the highest Japanese standards. You can enjoy traditional Japanese dishes with affordable prices.",
     logo: "http://bonzai-japaneserestaurant.co.uk/images/Bonzai.png",
   },
   {
@@ -306,6 +334,7 @@ module.exports = [
     information: "Every Day: 8:00 PM - 10:00 PM",
     phone: "+44 116 251 5959",
     website: "http://www.romaleicester.co.uk/index.php",
+    description: "Comfy, longtime outpost with coffee & baked goods, pizza, panini, classic Italian plates & wine.",
     logo: "http://www.romaleicester.co.uk/images/logo.png",
   },
   {
@@ -316,6 +345,7 @@ module.exports = [
     information: "Every Day: 9:00 AM - 10:00 PM",
     phone: "+44 20 3653 2010",
     website: "https://www.daisygreenfood.com/venues/scarlett-green",
+    description: "Buzzy, bi-level cafe & restaurant drawing on elevated Antipodean-inspired cuisine & drinks.",
     logo:
       "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/81227726_2548332768575908_1197878542201782272_o.jpg?_nc_cat=101&ccb=2&_nc_sid=9267fe&_nc_ohc=OxMcOuw9_8EAX-HcOXC&_nc_ht=scontent-lhr8-1.xx&oh=c5cd33839dccdca088d5a9584db78590&oe=5FCC566A",
   },
@@ -327,6 +357,7 @@ module.exports = [
     information: "Every Day: 1:00 PM - 10:00 PM",
     phone: "+44 20 8001 4628",
     website: "www.amrutha.co.uk",
+    description: "Vegan takes on classic comfort & soul food in a modern setting with buffet-style lunch & dinner.",
     logo:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/28577961_1558081860974474_3334279321274216264_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=cJ_zZPWpHmMAX9ZFp3Y&_nc_ht=scontent-lht6-1.xx&oh=9db8fd71585f751bb99519a6fcc156e5&oe=5FCB13A8",
   },
@@ -338,6 +369,7 @@ module.exports = [
     information: "Every Day: 12:00 PM - 10:00 PM",
     phone: "+44 20 3859 3000",
     website: "https://luca.restaurant/",
+    description: "British seasonal ingredients through an Italian lens",
     logo:
       "https://luca.restaurant/wp-content/themes/luca-v2/assets/img/luca-logo.svg",
   },
@@ -349,6 +381,7 @@ module.exports = [
     information: "Every Day: 7:30 AM - 5:00 PM",
     phone: "+44 20 7254 2999",
     website: "https://www.215hackney.co.uk/",
+    description: "The breakfast + brunch menu celebrates the cuisines from the Middle East region with influences from Tel Aviv's street food to Syrian delicacies to Palestinian comfort food and of course with a East London touch.",
     logo:
       "https://www.hackneygazette.co.uk/polopoly_fs/1.6578440!/image/image.jpg_gen/derivatives/landscape_630/image.jpg",
   },
@@ -360,6 +393,7 @@ module.exports = [
     information: "Every Day: 5:30 PM - 10:30 PM",
     phone: "+44 20 8617 1092",
     website: "https://www.piate.co.uk/",
+    description: "Our vision is to show how innovative, tasty and refined Mediterranean food can be. PIATE, which means Plates in Latin, revives the sharing culinary tradition of the Mediterranean and is at the very core of our restaurant dining experience",
     logo:
       "https://static.wixstatic.com/media/5ebe2b_a4354634c18d47f2adebae513e0f21bb~mv2.png/v1/crop/x_136,y_136,w_2683,h_910/fill/w_513,h_184,al_c,q_85,usm_0.66_1.00_0.01/5ebe2b_a4354634c18d47f2adebae513e0f21bb~mv2.webp",
   },
@@ -371,6 +405,7 @@ module.exports = [
     information: "Every Day: 11:30 AM - 10:00 PM",
     phone: "+44 20 3005 7453",
      website: "http://zalagrill.com/",
+     description: "Authentic Middle Eastern flavours in the heart of Camden",
     logo:
       "http://www.zalagrill.com/wp-content/uploads/2019/09/zala-logo-TEST-1.png",
   },

@@ -8,7 +8,8 @@ const restaurantsSchema = new Schema({
   address: String,
   information: String,
   phone: String,
-  website: String,  
+  website: String,
+  description: String,  
   logo: String
 });
 

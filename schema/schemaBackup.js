@@ -102,6 +102,7 @@ const RestaurantType = new GraphQLObjectType({
     information: {type: GraphQLString},
     phone: { type: GraphQLString },
     website: { type: GraphQLString },
+    description: { type: GraphQLString },
     city: {
       type: CityType,
       resolve(parent, args) {
@@ -219,6 +220,9 @@ const Mutation = new GraphQLObjectType({
         website: {
           type: GraphQLString
         },
+        description: { 
+          type: GraphQLString 
+        },
         city_id: {
           type: GraphQLString
         }
@@ -231,6 +235,7 @@ const Mutation = new GraphQLObjectType({
           information: args.information,
           phone: args.phone,
           website: args.website,
+          description: args.description,
           city_id: args.city_id
         });
         return restaurant.save();
