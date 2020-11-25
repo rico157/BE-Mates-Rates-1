@@ -1,5 +1,5 @@
 # BE-Mates-Rates - [HOST](https://matesrates.herokuapp.com/graphql)
-The backend of our [Mates Rates](https://github.com/PopThieves/MatesRates/) app that list reviews of restaurants your friends have been to. In here will be the database and the server
+The backend of our [Mates Rates](https://github.com/rico157/MatesRates/) app that list reviews of restaurants your friends have been to. In here will be the database and the server
 
 # Example Queries
 
